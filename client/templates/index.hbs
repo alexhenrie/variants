@@ -1,0 +1,12 @@
+<h1>Individuals</h1>
+
+<table class="table table-hover table-border table-striped">
+  <tbody>
+    {{#each individual in model}}
+      <tr>
+        <td>{{individual.id}}</td>
+        <td>{{individual.name}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

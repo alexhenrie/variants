@@ -1,0 +1,10 @@
+dist
+bower_components
+app/.index.js
+app/.templates.js
+build
+.DS_Store
+tmp
+
+node_modules/*
+!node_modules/ember

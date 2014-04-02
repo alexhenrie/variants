@@ -1,0 +1,39 @@
+{
+  "name": "variants-client",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "serve": "mkdir -p tmp/watchify && broccoli serve",
+    "watchify": "node_modules/.bin/watchify lib/main.js -o tmp/watchify/main.js -v",
+    "build": "rm -rf dist && broccoli build dist",
+    "build-app": "node_modules/.bin/browserify lib/main.js --external jquery --external handlebars --external ember -o tmp/watchify/main.js"
+  },
+  "directories": {
+    "lib": "lib",
+    "dist": "dist"
+  },
+  "dependencies": {
+    "jquery": "*",
+    "broccoli": "~0.4.1",
+    "broccoli-static-compiler": "~0.1.2",
+    "lodash-node": "~2.4.1",
+    "browserify": "~3.33.0",
+    "browserify-shim": "~3.3.2",
+    "es6ify": "~0.4.8",
+    "broccoli-sass": "~0.1.2",
+    "broccoli-template-compiler": "~1.4.1",
+    "broccoli-concat": "0.0.3",
+    "watchify": "~0.6.3"
+  },
+  "es6ify": {},
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "ember": "global:Ember",
+    "jquery": "global:jQuery",
+    "handlebars": "global:Handlebars"
+  }
+}
