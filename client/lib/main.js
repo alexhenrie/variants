@@ -13,7 +13,7 @@ App.initializer({
 App.reopen({
   // Routes
   IndexRoute: require("./routes/index.js"),
-  IndividualsRoute: require("./routes/individuals.js"),
+  IndividualsIndexRoute: require("./routes/individuals/index.js"),
   VariantsRoute: require("./routes/variants.js")
 });
 

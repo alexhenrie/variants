@@ -4,8 +4,11 @@
   <tbody>
     {{#each individual in model}}
       <tr>
-        <td>{{individual.id}}</td>
-        <td>{{individual.name}}</td>
+        <td>
+          {{#link-to 'individuals' this}}
+            {{individual.name}}
+          {{/link-to}}
+        </td>
       </tr>
     {{/each}}
   </tbody>
