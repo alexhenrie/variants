@@ -1,26 +1,36 @@
 var express = require('express');
-var orm = require('orm');
+var http = require('http');
 var cors = require('cors');
+var db = require('./models');
 var app = express();
+
 app.use(cors());
+app.use(express.bodyParser());
 
-app.use(orm.express("mysql://root@localhost/variants", {
-  define: function (db, models, next) {
-    models.individual = db.define("individual", {});
+const PORT = 3002;
 
+app.get("/", function(req, res) {
+  res.json([
+    'individuals',
+    'variants'
+  ]);
+});
 
-    models.cosmic = require('./models/cosmic')(db);
+app.get("/individuals", require('./routes/individuals/get'));
+app.get("/individuals/:id", require('./routes/individuals/:id/get'));
+app.get("/individuals/:individual_id/variants", require('./routes/individuals/:id/variants/get'));
+app.get("/variants", require('./routes/variants/get'));
+app.get("/variants/:id", require('./routes/variants/:id/get'));
+// app.get("/individuals/:individual_id/variants/deleterious", require('./routes/individuals/:id/variants/deleterious/get'));
 
-
-    models.variant = require('./models/variant')(db);
-    next();
-  }
-}));
-
-const PORT = 8080;
-app.listen(PORT);
-console.log('Listening on port ' + PORT);
-
-app.get("/individuals", require('./routes/individuals'));
-app.get("/variants", require('./routes/variants'));
-app.get("/deleterious", require('./routes/cosmic'));
+db.sequelize
+  .authenticate()
+  .complete(function(err) {
+    if (err) {
+      throw err
+    } else {
+      http.createServer(app).listen(PORT, function(){
+        console.log('Express server listening on port ' + PORT)
+      })
+    }
+  })
