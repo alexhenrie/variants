@@ -102,16 +102,6 @@ module.exports = function(sequelize, DataTypes) {
         CosmicVariant.belongsTo(models.Variant, {
           foreignKey: 'VARIANT_ID'
         });
-      },
-      findByIndividualId: function(individual_id) {
-        individualId = parseInt(individualId);
-        return sequelize.query.execQuery("SELECT * FROM COSMIC INNER JOIN VARIANT\
-          ON COSMIC.VARIANT_ID = VARIANT.ID\
-          WHERE VARIANT.INDIVIDUAL_ID = :individual_id", null, {
-            raw: true
-          }, {
-            individual_id: individual_id
-          });
       }
     }
   })
