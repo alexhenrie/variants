@@ -1,0 +1,12 @@
+#Daniel Ence 
+#March 18, 2013
+
+
+This Cosmic parser works on CosmicMutant export
+
+
+
+
+This cds attribute c.655-12_655-9delaacc
+is not caught by any of the if-statments in Utils.pm seq_grabber
+
