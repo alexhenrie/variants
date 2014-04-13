@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 use warnings;
 use strict;
-use lib '/u01/dence/Projects/GVF_DB_project/GVF_DB_Variant/lib'; 
+use lib '../lib'; 
 use Utils;
 use GVF_DB_Connect;
 use GVF::DB::Variant;

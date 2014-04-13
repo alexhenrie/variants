@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 use IO::File;
-use lib '/u01/dence/Projects/GVF_DB_project/GVF_DB_Variant/lib';
+use lib '../lib';
 use GVF_DB_Connect;
 use GVF::DB::Variant;
 use Utils;

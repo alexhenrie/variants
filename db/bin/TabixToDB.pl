@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w 
 use strict;
-use lib '/u01/dence/Projects/GVF_DB_project/GVF_DB_Variant/lib';
+use lib '../lib';
 use Tabix;
 use IO::File;
 use GVF_DB_Connect;

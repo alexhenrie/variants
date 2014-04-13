@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use lib '/u01/dence/GVF_DB_project/GVF_DB_Variant/lib';
+use lib '../lib';
 use GVF::DB::Variant;
 use Bio::Perl;
 use Bio::DB::Fasta;
