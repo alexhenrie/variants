@@ -23,7 +23,7 @@
     "broccoli-sass": "~0.1.2",
     "broccoli-template-compiler": "~1.4.1",
     "broccoli-concat": "0.0.3",
-    "watchify": "~0.6.3"
+    "watchify": "~0.6.4"
   },
   "es6ify": {},
   "browserify": {

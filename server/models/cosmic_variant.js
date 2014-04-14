@@ -102,6 +102,15 @@ module.exports = function(sequelize, DataTypes) {
         CosmicVariant.belongsTo(models.Variant, {
           foreignKey: 'VARIANT_ID'
         });
+      },
+      findByIndividualId: function(individual_id) {
+        return sequelize.query('SELECT * FROM cosmic_variants INNER JOIN variants\
+          ON cosmic_variants.VARIANT_ID = variants.ID\
+          WHERE variants.INDIVIDUAL_ID = :individual_id ;',null,{
+        raw:true
+      }, {
+        individual_id: individual_id
+      })
       }
     }
   })

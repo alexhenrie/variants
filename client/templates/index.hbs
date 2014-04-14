@@ -5,8 +5,8 @@
     {{#each individual in model}}
       <tr>
         <td>
-          {{#link-to 'individuals' this}}
-            {{individual.name}}
+          {{#link-to 'individuals' individual}}
+            Individual #{{individual.id}}
           {{/link-to}}
         </td>
       </tr>
