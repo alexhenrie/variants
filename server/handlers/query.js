@@ -1,3 +1,5 @@
+var Sequelize = require('sequelize')
+
 module.exports = function handleQuery(queryParameters, dbQuery) {
   if(typeof dbQuery === 'undefined') {
     dbQuery = {};
@@ -24,6 +26,10 @@ module.exports = function handleQuery(queryParameters, dbQuery) {
 
   if(queryParameters.where) {
     dbQuery.where = JSON.parse(queryParameters.where);
+    if(typeof dbQuery.where['$or'] !== 'undefined') {
+      dbQuery.where[Sequelize.or] = dbQuery.where['$or']
+      delete dbQuery.where['$or']
+    }
   } else {
     dbQuery.where = {};
   }

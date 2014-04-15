@@ -81,28 +81,37 @@ module.exports = function(sequelize, DataTypes) {
       "allowNull": false,
       "defaultValue": null
     }
-  };
+  }
 
   var Variant = sequelize.define('Variant', attributes, {
     timestamps: false,
     underscored: true,
     tableName: 'variants',
     classMethods: {
+      // findByIndividualAndNucleotideRange: function(individual_id,start,end) {
+      //   return sequelize.query('SELECT * FROM cosmic_variants INNER JOIN variants\
+      //     ON cosmic_variants.VARIANT_ID = variants.ID\
+      //     WHERE variants.INDIVIDUAL_ID = :individual_id ;',null,{
+      //       raw:true
+      //   }, {
+      //     individual_id: individual_id
+      //   })
+      // },
       associate: function(models) {
         Variant.belongsTo(models.Individual, {
           foreignKey: 'INDIVIDUAL_ID'
-        });
+        })
 
         Variant.hasOne(models.CosmicVariant, {
           foreignKey: 'VARIANT_ID'
-        });
+        })
 
         Variant.hasOne(models.ThousandGenomeVariant, {
           foreignKey: 'VARIANT_ID'
-        });
+        })
       }
     }
   })
 
-  return Variant;
-};
+  return Variant
+}

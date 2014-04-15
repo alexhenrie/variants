@@ -1,7 +1,45 @@
-{{model.id}}
+<style>
+.nucleotide {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background-color: blue;
+}
+
+.variant {
+  background-color: yellow;
+  color: white;
+}
+
+.variant.deleterious {
+  background-color: red;
+  color: white;
+}
+</style>
+
+<h2>Individual #{{model.id}}</h2>
+
+<h3>Deleterious variants</h3>
 
 <div>
-  {{#each variant in model.variants}}
-    {{variant.Source}}
+  {{#each variant in model.deleterious}}
+    <div>{{variant.cosmicVariant.GeneName}} ({{variant.Start}} - {{variant.End}})</div>
   {{/each}}
+</div>
+
+<h3>Variants</h3>
+
+<div>
+  {{input type="number" placeholder="Start" min="0" step="1" value=variantRangeStart}}
+  -
+  {{input type="number" placeholder="End" min="0" step="1" value=variantRangeEnd}}
+
+  {{variants.length}}
+
+  <div>
+    {{#each variant in variants}}
+      <div {{bind-attr class=":nucleotide"}}>
+      </div>
+    {{/each}}
+  </div>
 </div>
