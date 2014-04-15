@@ -1,5 +1,5 @@
 var attr = DS.attr;
 
 module.exports = DS.Model.extend({
-  upc: attr('string'),
+  variants: DS.hasMany('variant', {async:true})
 })

@@ -43,7 +43,8 @@ App.reopen({
   VariantsRoute: require("./routes/variants.js"),
 
   // Models
-  Individual: require("./models/individual.js")
+  Individual: require("./models/individual.js"),
+  Variant: require("./models/variant.js")
 })
 
 module.exports = window.App = App
