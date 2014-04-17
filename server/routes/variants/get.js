@@ -10,10 +10,8 @@ module.exports = function(req, res) {
     dbQuery.where = Sequelize.and(
       {"INDIVIDUAL_ID": req.query.INDIVIDUAL_ID || 1},
       Sequelize.or(
-        {
-          "Start": { "between": [req.query.start || 0,req.query.end || 0] },
-          "End": { "between": [req.query.start || 0,req.query.end || 0] }
-        }
+        {"Start": { "between": [req.query.start || 0,req.query.end || 0] }},
+        {"End": { "between": [req.query.start || 0,req.query.end || 0] }}
       )
     )
   }

@@ -30,6 +30,7 @@ App.IndividualsIndexController = require('./controllers/individuals/index'),
 // Variant: require("./models/variant.js")
 
 // Views
+App.IndividualsIndexView = require("./views/individuals/index")
 App.NucleotidesView = require("./views/nucleotides")
 
 module.exports = window.App = App

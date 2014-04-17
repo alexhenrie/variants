@@ -2,6 +2,16 @@ var Ember = require("ember")
 
 module.exports = Ember.View.extend({
   tagName: 'div',
+
+  didInsertElement : function(){
+    this._super()
+    Ember.run.scheduleOnce('afterRender', this, function() {
+      this.$.on('click',function() {
+        alert('click')
+      })
+    });
+  },
+
   render: function(buffer) {
     var start = this.get('start')
     var end = this.get('end')
@@ -14,7 +24,7 @@ module.exports = Ember.View.extend({
 
     this.get('variants').forEach(function(variant) {
       for(x = variant.Start;x <= variant.End;x++) {
-        if(variant.End > end) continue;
+        if(x > end) continue;
         variantRange[x-start] = variant
       }
     })
@@ -23,9 +33,9 @@ module.exports = Ember.View.extend({
       if(!variant) {
         buffer.push('<div class="nucleotide"></div>')
       } else if(variant.cosmicVariant) {
-        buffer.push('<div class="nucleotide variant deleterious"></div>')
+        buffer.push('<div class="nucleotide variant deleterious" variant-id="' + variant.ID + '"></div>')
       } else {
-        buffer.push('<div class="nucleotide variant"></div>')
+        buffer.push('<div class="nucleotide variant" variant-id="' + variant.ID + '"></div>')
       }
     })
   },
