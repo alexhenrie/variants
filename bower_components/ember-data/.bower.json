@@ -1,0 +1,14 @@
+{
+  "name": "ember-data",
+  "_cacheHeaders": {
+    "ETag": "\"3f382c7a0495db0a05be3f3d5ba432e0\"",
+    "Last-Modified": "Thu, 20 Feb 2014 15:51:36 GMT",
+    "Content-Length": "74757",
+    "Content-Type": "text/javascript"
+  },
+  "_release": "e-tag:3f382c7a0",
+  "main": "index.js",
+  "_source": "http://builds.emberjs.com/tags/v1.0.0-beta.7/ember-data.min.js",
+  "_target": "*",
+  "_originalSource": "http://builds.emberjs.com/tags/v1.0.0-beta.7/ember-data.min.js"
+}
