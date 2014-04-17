@@ -17,18 +17,19 @@ App.Router.map(function() {
   })
 })
 
-App.reopen({
-  // Routes
-  IndexRoute: require("./routes/index.js"),
-  IndividualsIndexRoute: require("./routes/individuals/index.js"),
-  // VariantsRoute: require("./routes/variants.js"),
+// Routes
+App.IndexRoute = require("./routes/index.js"),
+App.IndividualsIndexRoute = require("./routes/individuals/index.js"),
+// VariantsRoute: require("./routes/variants.js"),
 
-  // Controllers
-  IndividualsIndexController: require('./controllers/individuals/index'),
+// Controllers
+App.IndividualsIndexController = require('./controllers/individuals/index'),
 
-  // // Models
-  // Individual: require("./models/individual.js"),
-  // Variant: require("./models/variant.js")
-})
+// // Models
+// Individual: require("./models/individual.js"),
+// Variant: require("./models/variant.js")
+
+// Views
+App.NucleotidesView = require("./views/nucleotides")
 
 module.exports = window.App = App

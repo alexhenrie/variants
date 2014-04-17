@@ -20,14 +20,14 @@ module.exports = Ember.Controller.extend({
   }.observes('variantRangeStart','variantRangeEnd').on('init'),
 
   variantRangeStartObserver: function() {
-    if(parseInt(this.get('variantRangeEnd')) - parseInt(this.get('variantRangeStart')) != 500) {
-      this.set('variantRangeEnd',parseInt(this.get('variantRangeStart')) + 500)
+    if(parseInt(this.get('variantRangeEnd')) - parseInt(this.get('variantRangeStart')) != 1000) {
+      this.set('variantRangeEnd',parseInt(this.get('variantRangeStart')) + 1000)
     }
   }.observes('variantRangeStart').on('init'),
 
   variantRangeEndObserver: function() {
-    if(parseInt(this.get('variantRangeEnd')) - parseInt(this.get('variantRangeStart')) != 500) {
-      this.set('variantRangeStart',parseInt(this.get('variantRangeEnd')) - 500)
+    if(parseInt(this.get('variantRangeEnd')) - parseInt(this.get('variantRangeStart')) != 1000) {
+      this.set('variantRangeStart',parseInt(this.get('variantRangeEnd')) - 1000)
     }
   }.observes('variantRangeEnd').on('init')
 })

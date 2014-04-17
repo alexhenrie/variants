@@ -20,7 +20,7 @@ module.exports = function(req, res) {
 
   dbQuery.order = 'Start ASC'
 
-  dbQuery.limit = 500
+  dbQuery.limit = 1000
 
   console.log(dbQuery)
 
