@@ -22,7 +22,7 @@ module.exports = function(req, res) {
 
   console.log(dbQuery)
 
-  dbQuery.include = [db.CosmicVariant,db.ThousandGenomeVariant]
+  dbQuery.include = [db.CosmicVariant,db.ThousandGenomesVariant]
 
   db.Variant.findAndCountAll(dbQuery).success(function(result) {
     return res.json({

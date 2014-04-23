@@ -13,7 +13,7 @@ module.exports = Ember.Route.extend({
         getJSON(env.HOST + 'variants/',{
           where: JSON.stringify({
             "INDIVIDUAL_ID": params.id,
-            "cosmic_variant.ID": {"gt": 0}
+            "COSMIC.ID": {"gt": 0}
           })
         }, function(deleteriousResult) {
           result.individual.deleterious.setObjects(deleteriousResult.variants)

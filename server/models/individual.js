@@ -35,8 +35,7 @@ module.exports = function(sequelize, DataTypes) {
 
   var Individual = sequelize.define('Individual', attributes, {
     timestamps: false,
-    // underscored: true,
-    tableName: 'individuals',
+    tableName: 'INDIVIDUAL',
     classMethods: {
       associate: function(models) {
         Individual.hasMany(models.Variant, {

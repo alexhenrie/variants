@@ -47,18 +47,18 @@ module.exports = function(sequelize, DataTypes) {
       "defaultValue": null
     }
   };
-  var ThousandGenomeVariant = sequelize.define('ThousandGenomeVariant', attributes, {
+  var ThousandGenomesVariant = sequelize.define('ThousandGenomesVariant', attributes, {
     timestamps: false,
     underscored: true,
-    tableName: 'thousand_genome_variants',
+    tableName: 'THOUSANDGENOMES',
     classMethods: {
       associate: function(models) {
-        ThousandGenomeVariant.belongsTo(models.Variant, {
+        ThousandGenomesVariant.belongsTo(models.Variant, {
           foreignKey: 'VARIANT_ID'
         });
       }
     }
   })
 
-  return ThousandGenomeVariant
+  return ThousandGenomesVariant
 };

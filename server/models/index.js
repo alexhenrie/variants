@@ -2,7 +2,7 @@ var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
 var lodash    = require('lodash');
-var sequelize = new Sequelize('variants', 'root', null, {
+var sequelize = new Sequelize('GVF_DB_Variant', 'root', null, {
   dialect: 'mariadb'
 });
 var db        = {};

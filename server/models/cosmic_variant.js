@@ -95,8 +95,7 @@ module.exports = function(sequelize, DataTypes) {
 
   var CosmicVariant = sequelize.define('CosmicVariant', attributes, {
     timestamps: false,
-    underscored: true,
-    tableName: 'cosmic_variants',
+    tableName: 'COSMIC',
     classMethods: {
       associate: function(models) {
         CosmicVariant.belongsTo(models.Variant, {
@@ -104,9 +103,9 @@ module.exports = function(sequelize, DataTypes) {
         });
       },
       findByIndividualId: function(individual_id) {
-        return sequelize.query('SELECT * FROM cosmic_variants INNER JOIN variants\
-          ON cosmic_variants.VARIANT_ID = variants.ID\
-          WHERE variants.INDIVIDUAL_ID = :individual_id ;',null,{
+        return sequelize.query('SELECT * FROM COSMIC INNER JOIN VARIANT\
+          ON COSMIC.VARIANT_ID = variants.ID\
+          WHERE VARIANT.INDIVIDUAL_ID = :individual_id ;',null,{
             raw:true
         }, {
           individual_id: individual_id

@@ -86,7 +86,7 @@ module.exports = function(sequelize, DataTypes) {
   var Variant = sequelize.define('Variant', attributes, {
     timestamps: false,
     underscored: true,
-    tableName: 'variants',
+    tableName: 'VARIANT',
     classMethods: {
       // findByIndividualAndNucleotideRange: function(individual_id,start,end) {
       //   return sequelize.query('SELECT * FROM cosmic_variants INNER JOIN variants\
@@ -106,7 +106,7 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'VARIANT_ID'
         })
 
-        Variant.hasOne(models.ThousandGenomeVariant, {
+        Variant.hasOne(models.ThousandGenomesVariant, {
           foreignKey: 'VARIANT_ID'
         })
       }

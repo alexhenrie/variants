@@ -33,10 +33,7 @@ app.get('/', function(req, res) {
 
 app.get("/individuals", require('./routes/individuals/get'))
 app.get("/individuals/:id", require('./routes/individuals/:id/get'))
-app.get("/individuals/:individual_id/variants", require('./routes/individuals/:id/variants/get'))
 app.get("/variants", require('./routes/variants/get'))
-app.get("/variants/:id", require('./routes/variants/:id/get'))
-// app.get("/individuals/:individual_id/variants/deleterious", require('./routes/individuals/:id/variants/deleterious/get'))
 
 db.sequelize
   .authenticate()

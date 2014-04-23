@@ -32,7 +32,7 @@ module.exports = Ember.View.extend({
     variantRange.forEach(function(variant) {
       if(!variant) {
         buffer.push('<div class="nucleotide"></div>')
-      } else if(variant.cosmicVariant) {
+      } else if(variant.cOSMIC) {
         buffer.push('<div class="nucleotide variant deleterious" variant-id="' + variant.ID + '"></div>')
       } else {
         buffer.push('<div class="nucleotide variant" variant-id="' + variant.ID + '"></div>')

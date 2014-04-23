@@ -5,7 +5,7 @@
 <div>
   {{#each variant in model.deleterious}}
     <div>
-      <a style="cursor: pointer" {{action goto variant.Start}}>{{variant.cosmicVariant.GeneName}} ({{variant.Start}} - {{variant.End}})</a>
+      <a style="cursor: pointer" {{action goto variant.Start}}>{{variant.cOSMIC.GeneName}} ({{variant.Start}} - {{variant.End}})</a>
     </div>
   {{/each}}
 </div>
@@ -45,41 +45,45 @@
           <td>{{showcaseVariant.Start}} - {{showcaseVariant.End}}</td>
         </tr>
 
-        {{#if showcaseVariant.thousandGenomeVariant}}
-          <tr>
-            <th>Variant frequency</th>
-            <td>{{showcaseVariant.thousandGenomeVariant.VariantFrequency}}</td>
-          </tr>
-        {{/if}}
+        <tr>
+          <th>Variant frequency</th>
+          <td>
+            {{#if showcaseVariant.tHOUSANDGENOMES}}
+              {{showcaseVariant.tHOUSANDGENOMES.VariantFrequency}}
+            {{else}}
+              Low
+            {{/if}}
+          </td>
+        </tr>
 
-        {{#if showcaseVariant.cosmicVariant}}
+        {{#if showcaseVariant.cOSMIC}}
           <tr>
             <th>Gene name</th>
-            <td>{{showcaseVariant.cosmicVariant.GeneName}}</td>
+            <td>{{showcaseVariant.cOSMIC.GeneName}}</td>
           </tr>
           <tr>
             <th>Primary site</th>
-            <td>{{showcaseVariant.cosmicVariant.PrimarySite}}</td>
+            <td>{{showcaseVariant.cOSMIC.PrimarySite}}</td>
           </tr>
           <tr>
             <th>Site subtype</th>
-            <td>{{showcaseVariant.cosmicVariant.SiteSubtype}}</td>
+            <td>{{showcaseVariant.cOSMIC.SiteSubtype}}</td>
           </tr>
           <tr>
             <th>Cosmic strand</th>
-            <td>{{showcaseVariant.cosmicVariant.Strand}}</td>
+            <td>{{showcaseVariant.cOSMIC.Strand}}</td>
           </tr>
           <tr>
             <th>Primary histology</th>
-            <td>{{showcaseVariant.cosmicVariant.PrimaryHistology}}</td>
+            <td>{{showcaseVariant.cOSMIC.PrimaryHistology}}</td>
           </tr>
           <tr>
             <th>Histology subtype</th>
-            <td>{{showcaseVariant.cosmicVariant.HistologySubtype}}</td>
+            <td>{{showcaseVariant.cOSMIC.HistologySubtype}}</td>
           </tr>
           <tr>
             <th>Somatic status</th>
-            <td>{{showcaseVariant.cosmicVariant.SomaticStatus}}</td>
+            <td>{{showcaseVariant.cOSMIC.SomaticStatus}}</td>
           </tr>
         {{/if}}
       </tbody>
