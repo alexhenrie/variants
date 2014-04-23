@@ -1,18 +1,36 @@
 variants
 ========
 
-COSMIC / 1000 genomes integrated database creation
+COSMIC / 1000 genomes / GVF integrated visualization
 
-### Build client
+### Importing the database
 
-```javascript
-cd client
+An example database is provided in db/GVF_DB_Variant.sql. It contains only one
+individual. Databases with multiple individuals can be generated from the Perl
+scripts in the db folder.
+
+### Building and running the server
+
+```shell
+sudo npm install -g node-dev
+cd server
 npm install
 npm run build
+node-dev index.js
 ```
 
-### Examples
+### Building and running the client
+```shell
+sudo npm install -g bower broccoli-cli
+cd client
+npm install
+bower install
+npm run watchify
+npm run serve #do this in a separate tab
+```
+
+### API example
 
 ```
-/individuals/1/variants?where={%22cosmic_variant.ID%22:{%22gt%22:0}}
+http://localhost:3002/variants?where={%22INDIVIDUAL_ID%22:1,%22COSMIC.ID%22:{%22gt%22:0}}
 ```
